@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.IdentityFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v_40_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".4" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/photoGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="photoDivider,photo" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/lastnameGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="lastname,lastnameText,lastnameDivider" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/firstnameGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="firstname,firstnameDivider,firstnameText" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/dateOfBirthGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="dateOfBirth,dateOfBirthDivider,dateOfBirthText" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/genderGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="genderDivider,gender,genderText" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/nationalityGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="nationalityText,nationalityDivider,nationality" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/placeOfBirthGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="placeOfBirthDivider,placeOfBirth,placeOfBirthText" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/bsnGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="bsnDivider,bsn,bsnText,signatureGroup" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/signatureGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="signaturePhoto,signatureDivider,signature" />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_launcher"
+                tools:src="@tools:sample/avatars" />
+
+            <View
+                android:id="@+id/photoDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photo" />
+
+            <TextView
+                android:id="@+id/lastnameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/photoDivider" />
+
+            <TextView
+                android:id="@+id/lastname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/last_name"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/lastnameDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photoDivider" />
+
+            <View
+                android:id="@+id/lastnameDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastnameText" />
+
+            <TextView
+                android:id="@+id/firstnameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/lastnameDivider" />
+
+            <TextView
+                android:id="@+id/firstname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/first_name"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/firstnameDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastnameDivider" />
+
+            <View
+                android:id="@+id/firstnameDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameText" />
+
+            <TextView
+                android:id="@+id/dateOfBirth"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/date_of_birth"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/dateOfBirthDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameDivider" />
+
+            <TextView
+                android:id="@+id/dateOfBirthText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameDivider" />
+
+            <View
+                android:id="@+id/dateOfBirthDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateOfBirthText" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/gender"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/genderDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateOfBirthDivider" />
+
+            <TextView
+                android:id="@+id/genderText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/dateOfBirthDivider" />
+
+            <View
+                android:id="@+id/genderDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genderText" />
+
+            <TextView
+                android:id="@+id/nationality"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/nationality"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/nationalityDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderDivider" />
+
+            <TextView
+                android:id="@+id/nationalityText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/genderDivider" />
+
+            <View
+                android:id="@+id/nationalityDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nationalityText" />
+
+            <TextView
+                android:id="@+id/placeOfBirth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/place_of_birth"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/placeOfBirthDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nationalityDivider" />
+
+            <TextView
+                android:id="@+id/placeOfBirthText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/nationalityDivider" />
+
+            <View
+                android:id="@+id/placeOfBirthDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeOfBirthText" />
+
+            <TextView
+                android:id="@+id/bsn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/bsn"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toTopOf="@+id/bsnDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeOfBirthDivider" />
+
+            <TextView
+                android:id="@+id/bsnText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="viewEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/placeOfBirthDivider" />
+
+            <View
+                android:id="@+id/bsnDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bsnText" />
+
+            <ImageView
+                android:id="@+id/signaturePhoto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:foregroundGravity="right"
+                android:scaleType="fitCenter"
+                android:src="@drawable/mrz_overlay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toTopOf="@+id/bsnDivider" />
+
+            <TextView
+                android:id="@+id/signature"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/signature"
+                app:layout_constraintBottom_toTopOf="@+id/signatureDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bsnDivider" />
+
+            <View
+                android:id="@+id/signatureDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signaturePhoto" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

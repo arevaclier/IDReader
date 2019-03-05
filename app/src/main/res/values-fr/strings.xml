@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ID Reader</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="start_text">Cette application vous permet de lire un document d\'identitité. Pour commencer, choisissez une option ce-dessous.</string>
+    <string name="driving_licence">Permis de conduire</string>
+    <string name="id_card">Carte d\'identité</string>
+    <string name="passport">Passeport</string>
+    <string name="certificate_preparation">Préparation de l\'application…</string>
+    <string name="usable_documents">
+        Note:\n
+        - Seuls les documents contenant une puce peuvent être lus avec cette application.\n
+        - Seuls les permis de conduire néerlandais ont été testés.
+    </string>
+    <string name="grant">Accorder</string>
+    <string name="permission_error">Cette application a besoin d\'un accès à la caméra pour fonctionner correctement. Merci d\'accorder la permission.</string>
+    <string name="scan_passport_mrz">Scannez la zone de lecture de votre document</string>
+    <string name="error_camera">Une erreur s\'est produite en ouvrant la caméra.</string>
+    <string name="dl_qr_error">Merci de scanner le code QR d\'un permis de conduire</string>
+    <string name="scan_dl">Scannez le code QR de votre permis de conduire</string>
+    <string name="scan_nfc_chip">Lecture de la puce</string>
+    <string name="scan_nfc_help_message">"Approchez le document de l'arrière du téléphone et bougez le lentement jusqu'à ce que l'application le détecte.\nLa lecture peut prendre un certain temps. "</string>
+    <string name="searching_document">Recherche du document...</string>
+    <string name="reading_info">Identité</string>
+    <string name="reading_photo">Photo</string>
+    <string name="certificate_check">Validité</string>
+    <string name="nfc_read_error">Une erreur s\'est produite pendant la lecture. Merci de réessayer</string>
+    <string name="no_nfc">Ce téléphone ne supporte pas la lecture de la puce</string>
+    <string name="nfc_popup_title">NFC Requis</string>
+    <string name="nfc_popup_message">La puce NFC a besoin d\'être activée pour lire le document.</string>
+    <string name="nfc_popup_accept_btn">Activer</string>
+    <string name="document_found">Document trouvé</string>
+    <string name="certificate">Certificats</string>
+    <string name="document_type">Type de document</string>
+    <string name="last_name">Nom</string>
+    <string name="first_name">Prénom(s)</string>
+    <string name="date_of_birth">Date de naissance</string>
+    <string name="gender">Sexe</string>
+    <string name="nationality">Nationalité</string>
+    <string name="place_of_birth">Lieu de naissance</string>
+    <string name="document_number">Numéro de document</string>
+    <string name="expiry_date">Date d\'expiration</string>
+    <string name="issue_date">Délivré le</string>
+    <string name="issuing_state">Pays émetteur</string>
+    <string name="authority">Autorité</string>
+    <string name="legitimate">Légitime</string>
+    <string name="validity">Validité</string>
+    <string name="csca">Certificat d\'Etat émetteur (CSCA)</string>
+    <string name="serial_number">Numéro de série</string>
+    <string name="algorithm">Algorithme</string>
+    <string name="thumbprint">Empreinte</string>
+    <string name="issuer">Émetteur</string>
+    <string name="subject">Sujet</string>
+    <string name="valid_from">Valide du</string>
+    <string name="valid_to">Valid au</string>
+    <string name="dsc">Certificat du document (DSC)</string>
+    <string name="access_control">Contrôle d\'accès</string>
+    <string name="authentication">Authentification</string>
+    <string name="dg_hashes">Empreinte des données</string>
+    <string name="document_signer">Signataire du document</string>
+    <string name="country_signer">Pays signataire</string>
+    <string name="hash">Empreinte</string>
+    <string name="calculated">Calculé</string>
+    <string name="valid">Validé</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="success">Passé</string>
+    <string name="fail">Raté</string>
+    <string name="signature">Signature</string>
+    <string name="status">Status</string>
+    <string name="control">Contrôle</string>
+    <string name="match">Égal</string>
+    <string name="not_valid">Non valide</string>
+    <string name="na">N/A</string>
+    <string name="document">Document</string>
+    <string name="categories">Catégories</string>
+    <string name="extra">Extra</string>
+    <string name="category">Catégorie %s</string>
+</resources>

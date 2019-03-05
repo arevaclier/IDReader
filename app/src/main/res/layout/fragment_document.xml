@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DocumentFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v_40_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".4" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/documentTypeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="documentTypeDivider,documentType,documentTypeText" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/documentNumberGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="documentNumber,documentNumberDivider,documentNumberText" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/expiryDateGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="expiryDateText,expiryDate,expiryDateDivider" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/issueDateGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="issueDateDivider,issueDateText,issueDate" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/issuingStateGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="issuingStateText,issuingStateDivider,issuingState" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/authorityGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="authority,authorityText,authorityDivider" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/legitimateGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="legitimateText,legitimate,legitimateDivider" />
+
+            <View
+                android:id="@+id/topDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/documentType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/document_type"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/documentTypeDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topDivider" />
+
+            <TextView
+                android:id="@+id/documentTypeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/topDivider" />
+
+            <View
+                android:id="@+id/documentTypeDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/documentTypeText" />
+
+            <TextView
+                android:id="@+id/documentNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/document_number"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/documentNumberDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/documentTypeDivider" />
+
+            <TextView
+                android:id="@+id/documentNumberText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/documentTypeDivider" />
+
+            <View
+                android:id="@+id/documentNumberDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/documentNumberText" />
+
+            <TextView
+                android:id="@+id/expiryDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/expiry_date"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/expiryDateDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/documentNumberDivider" />
+
+            <TextView
+                android:id="@+id/expiryDateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/documentNumberDivider" />
+
+            <View
+                android:id="@+id/expiryDateDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/expiryDateText" />
+
+            <TextView
+                android:id="@+id/issueDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/issue_date"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/issueDateDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/expiryDateDivider" />
+
+            <TextView
+                android:id="@+id/issueDateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/expiryDateDivider" />
+
+            <View
+                android:id="@+id/issueDateDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/issueDateText" />
+
+            <TextView
+                android:id="@+id/issuingState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/issuing_state"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/issuingStateDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/issueDateDivider" />
+
+            <TextView
+                android:id="@+id/issuingStateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/issueDateDivider" />
+
+            <View
+                android:id="@+id/issuingStateDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/issuingStateText" />
+
+            <TextView
+                android:id="@+id/authority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/authority"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/authorityDivider"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/issuingStateDivider" />
+
+            <TextView
+                android:id="@+id/authorityText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/issuingStateDivider" />
+
+            <View
+                android:id="@+id/authorityDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/authorityText" />
+
+            <TextView
+                android:id="@+id/legitimate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/legitimate"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/v_40_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/authorityDivider" />
+
+            <TextView
+                android:id="@+id/legitimateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/dash"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/v_40_1"
+                app:layout_constraintTop_toBottomOf="@+id/authorityDivider" />
+
+            <View
+                android:id="@+id/legitimateDivider"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/legitimateText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

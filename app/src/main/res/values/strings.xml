@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">ID Reader</string>
+    <string name="welcome">Welcome</string>
+    <string name="start_text">This app lets you scan your ID documents. To start, choose an option below.</string>
+    <string name="driving_licence">Driving licence</string>
+    <string name="id_card">ID Card</string>
+    <string name="passport">Passport</string>
+    <string name="certificate_preparation">Preparing the app…</string>
+    <string name="usable_documents">
+        Note:\n
+        - Only documents with a chip inside can be read by this application.\n
+        - Only dutch driving licences have been tested.
+    </string>
+    <string name="grant">Grant</string>
+    <string name="permission_error">This application needs camera access to function properly. Please grant the permission.</string>
+    <string name="scan_passport_mrz">Scan the Machine Readable Zone on your document</string>
+    <string name="error_camera">There was an error opening the camera. Please retry.</string>
+    <string name="dl_qr_error">Please scan a Driving Licence QR code</string>
+    <string name="scan_dl">Scan the QR code on your driving licence</string>
+    <string name="scan_nfc_chip">Scan the chip</string>
+    <string name="scan_nfc_help_message">Put the document to the back of the phone and move it slightly until the application detects it.\nThe scan can take a while.</string>
+    <string name="searching_document">Looking for document...</string>
+    <string name="reading_info">Identity</string>
+    <string name="reading_photo">Photo</string>
+    <string name="certificate_check">Validation</string>
+    <string name="nfc_read_error">There was an error while reading the chip. Please try again.</string>
+    <string name="no_nfc">This phone does not support NFC</string>
+    <string name="nfc_popup_title">NFC Required</string>
+    <string name="nfc_popup_message">The NFC chip needs to be activated to read the document</string>
+    <string name="nfc_popup_accept_btn">Turn on</string>
+    <string name="document_found">Document found</string>
+    <string name="certificate">Certificates</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="document_type">Document type</string>
+    <string name="dash" translatable="false">-</string>
+    <string name="last_name">Last name(s)</string>
+    <string name="first_name">First name(s)</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="gender">Gender</string>
+    <string name="nationality">Nationality</string>
+    <string name="place_of_birth">Place of birth</string>
+    <string name="bsn" translatable="false">BSN</string>
+    <string name="document_number">Document number</string>
+    <string name="expiry_date">Date of expiry</string>
+    <string name="issue_date">Date of issue</string>
+    <string name="issuing_state">Issuing state</string>
+    <string name="authority">Authority</string>
+    <string name="legitimate">Legitimate</string>
+    <string name="validity">Validity</string>
+    <string name="csca">Country signing certificate (CSCA)</string>
+    <string name="serial_number">Serial number</string>
+    <string name="algorithm">Algorithm</string>
+    <string name="thumbprint">Thumbprint</string>
+    <string name="issuer">Issuer</string>
+    <string name="subject">Subject</string>
+    <string name="valid_from">Valid from</string>
+    <string name="valid_to">Valid to</string>
+    <string name="dsc">Document signing certificate (DSC)</string>
+    <string name="access_control">Access control</string>
+    <string name="authentication">Authentication</string>
+    <string name="dg_hashes">Data group hashes</string>
+    <string name="document_signer">Document signer</string>
+    <string name="country_signer">Country signer</string>
+    <string name="dg" translatable="false">Data group %d</string>
+    <string name="hash">Hash</string>
+    <string name="calculated">Computed</string>
+    <string name="valid">Valid</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="bac" translatable="false">BAC (Basic Access Control)</string>
+    <string name="bap" translatable="false">BAP (Basic Access Protocol)</string>
+    <string name="success">Success</string>
+    <string name="fail">Fail</string>
+    <string name="signature">Signature</string>
+    <string name="status">Status</string>
+    <string name="control">Control</string>
+    <string name="match">Match</string>
+    <string name="not_valid">Not valid</string>
+    <string name="na">N/A</string>
+    <string name="document">Document</string>
+    <string name="categories">Categories</string>
+    <string name="extra">Extra</string>
+    <string name="category">Category %s</string>
+</resources>
