@@ -28,6 +28,7 @@ import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -35,12 +36,8 @@ public class StartActivity extends AppCompatActivity implements CertificateInter
 
     private static final String TAG = "StartActivity";
 
-    private Button idButton;
-    private Button passportButton;
-    private Button dlButton;
-
-    private ProgressBar certificatePBar;
-    private TextView certificateText;
+    private ConstraintLayout mainLayout;
+    private ConstraintLayout prepLayout;
 
     private Button permissionButton;
     private TextView permissionText;
@@ -56,11 +53,8 @@ public class StartActivity extends AppCompatActivity implements CertificateInter
         Security.insertProviderAt(new BouncyCastleProvider(), 1);
 
         // Retrieve UI elements
-        idButton = findViewById(R.id.id_button);
-        passportButton = findViewById(R.id.passport_button);
-        dlButton = findViewById(R.id.dl_button);
-        certificatePBar = findViewById(R.id.certificate_progressbar);
-        certificateText = findViewById(R.id.certificate_progess_text);
+        mainLayout = findViewById(R.id.mainLayout);
+        prepLayout = findViewById(R.id.prepLayout);
         permissionButton = findViewById(R.id.permission_button);
         permissionText = findViewById(R.id.permission_text);
 
@@ -103,12 +97,8 @@ public class StartActivity extends AppCompatActivity implements CertificateInter
     }
 
     private void setReady() {
-        certificateText.setVisibility(View.GONE);
-        certificatePBar.setVisibility(View.GONE);
-
-        idButton.setClickable(true);
-        passportButton.setClickable(true);
-        dlButton.setClickable(true);
+       prepLayout.setVisibility(View.GONE);
+       mainLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -151,6 +141,14 @@ public class StartActivity extends AppCompatActivity implements CertificateInter
 
     public void onIDButtonClicked(View v) {
         Intent intent = new Intent(this, PassportReaderActivity.class);
+        intent.putExtra("doctype", AppProperties.DOCTYPE_IDCARD);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onPassportButtonClicked(View v) {
+        Intent intent = new Intent(this, PassportReaderActivity.class);
+        intent.putExtra("doctype", AppProperties.DOCTYPE_PASSPORT);
         startActivity(intent);
         finish();
     }

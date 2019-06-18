@@ -55,6 +55,7 @@ public class NFCActivity extends AppCompatActivity implements NfcInterface {
     private ProgressBar photoBar;
     private ProgressBar certificateBar;
 
+    private String docType;
 
 
     @Override
@@ -70,6 +71,7 @@ public class NFCActivity extends AppCompatActivity implements NfcInterface {
             case AppProperties.ACTIVITY_PASSPORT_SCAN:
                 BACKeyHelper bacKeyHelper = getIntent().getParcelableExtra("backey");
                 bacKey = bacKeyHelper.getBacKey();
+                docType = getIntent().getStringExtra("doctype");
                 break;
             default:
                 onBackPressed();
@@ -99,6 +101,7 @@ public class NFCActivity extends AppCompatActivity implements NfcInterface {
                 break;
             case AppProperties.ACTIVITY_PASSPORT_SCAN:
                 intent = new Intent(this, PassportReaderActivity.class);
+                intent.putExtra("doctype", docType);
                 break;
             default:
                 intent = new Intent(this, StartActivity.class);
@@ -118,6 +121,7 @@ public class NFCActivity extends AppCompatActivity implements NfcInterface {
                 break;
             case AppProperties.ACTIVITY_PASSPORT_SCAN:
                 intent.putExtra("backey", new BACKeyHelper(bacKey));
+                intent.putExtra("doctype", docType);
                 break;
         }
         startActivity(intent);

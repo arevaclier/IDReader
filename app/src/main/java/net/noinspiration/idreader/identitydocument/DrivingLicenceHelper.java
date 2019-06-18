@@ -45,6 +45,7 @@ import javax.crypto.spec.DESedeKeySpec;
 
 import androidx.annotation.NonNull;
 
+import static net.noinspiration.idreader.identitydocument.HelperFunctions.capitalize;
 import static net.noinspiration.idreader.identitydocument.HelperFunctions.fromBytes;
 import static net.noinspiration.idreader.identitydocument.HelperFunctions.fromHexString;
 import static net.noinspiration.idreader.identitydocument.HelperFunctions.getBytesFromInputStream;
@@ -706,11 +707,11 @@ public class DrivingLicenceHelper implements InputStreamListener {
     }
 
     public String getLastName() {
-        return lastName;
+        return capitalize(lastName);
     }
 
     public String getOtherName() {
-        return otherName;
+        return capitalize(otherName);
     }
 
     public String getDob() {

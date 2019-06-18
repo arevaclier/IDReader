@@ -42,6 +42,7 @@ public class PersonActivity extends AppCompatActivity {
     private BACKeyHelper bacKey;
     private Person person;
     private int callingActivity;
+    private String docType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class PersonActivity extends AppCompatActivity {
                 break;
             case AppProperties.ACTIVITY_PASSPORT_SCAN:
                 bacKey = getIntent().getParcelableExtra("backey");
+                docType = getIntent().getStringExtra("doctype");
                 break;
         }
 
@@ -70,12 +72,14 @@ public class PersonActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, NFCActivity.class);
+        intent.putExtra("activity", callingActivity);
         switch (callingActivity) {
             case AppProperties.ACTIVITY_DL_SCAN:
                 intent.putExtra("mrz", mrz);
                 break;
             case AppProperties.ACTIVITY_PASSPORT_SCAN:
                 intent.putExtra("backey", bacKey);
+                intent.putExtra("doctype", docType);
                 break;
         }
         startActivity(intent);

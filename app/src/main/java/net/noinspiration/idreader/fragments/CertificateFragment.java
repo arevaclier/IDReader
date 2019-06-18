@@ -26,7 +26,6 @@ import static net.noinspiration.idreader.identitydocument.HelperFunctions.fromBy
 
 
 public class CertificateFragment extends Fragment {
-    private int dgNumber = 5;
 
     // Validity section
     private TextView accessControl;

@@ -16,6 +16,7 @@ import org.jmrtd.BACKey;
 import org.jmrtd.PassportService;
 import org.jmrtd.lds.SODFile;
 import org.jmrtd.lds.icao.DG11File;
+import org.jmrtd.lds.icao.DG15File;
 import org.jmrtd.lds.icao.DG1File;
 import org.jmrtd.lds.icao.DG2File;
 import org.jmrtd.lds.icao.DG7File;
@@ -126,9 +127,9 @@ public class PassportHelper implements InputStreamListener {
     private Context context;
 
     // Holds files that may be read more than once
-    private DG1File dg1 = null;
-    private DG2File dg2 = null;
-    private DG11File dg11 = null;
+    private byte[] dg1 = null;
+    private byte[] dg2 = null;
+    private byte[] dg11 = null;
     private SODFile sod = null;
 
     // Is the document legitimate
@@ -188,6 +189,7 @@ public class PassportHelper implements InputStreamListener {
         // Read DG1
         readFile(PassportService.EF_DG1);
 
+        DG1File dg1 = new DG1File(new ByteArrayInputStream(this.dg1));
         // Extract MRZ info from DG1
         MRZInfo info = dg1.getMRZInfo();
 
@@ -221,6 +223,7 @@ public class PassportHelper implements InputStreamListener {
             readFile(PassportService.EF_DG11);
             Log.d(TAG, "Extracting DG11 information");
 
+            DG11File dg11 = new DG11File(new ByteArrayInputStream(this.dg11));
             // Get the full name from DG11 and format it
             String name = dg11.getNameOfHolder();
             String names[] = name.split("<<");
@@ -248,6 +251,8 @@ public class PassportHelper implements InputStreamListener {
     public void readDG2() throws CardServiceException, IOException, SignatureException {
         // Read DG2
         readFile(PassportService.EF_DG2);
+
+        DG2File dg2 = new DG2File(new ByteArrayInputStream(this.dg2));
 
         // Extract face information
         List<FaceImageInfo> faceImageInfos = new ArrayList<>();
@@ -299,7 +304,7 @@ public class PassportHelper implements InputStreamListener {
             return;
         }
 
-        // Extract the embedded docuement's certificate
+        // Extract the embedded document's certificate
         X509Certificate certificate = sod.getDocSigningCertificate();
         if (certificate == null) {
             Log.e(TAG, "Certificate non existent");
@@ -435,7 +440,6 @@ public class PassportHelper implements InputStreamListener {
                 if (!Arrays.equals(hash, control)) {
                     Log.e(TAG, "Wrong hash for DG" + i);
                     certified = false;
-                    return;
                 } else
                     Log.d(TAG, "Valid DG" + i + " hash");
 
@@ -469,27 +473,27 @@ public class PassportHelper implements InputStreamListener {
         switch (file) {
             case PassportService.EF_DG1:
                 if (dg1 != null)
-                    return dg1.getEncoded();
+                    return dg1;
                 else {
-                    dg1 = new DG1File(pis);
+                    dg1 = getBytesFromInputStream(pis, MAX_BLOCK_READ_SIZE);
                     Log.d(TAG, "Stored DG1");
-                    return dg1.getEncoded();
+                    return dg1;
                 }
             case PassportService.EF_DG2:
                 if (dg2 != null)
-                    return dg2.getEncoded();
+                    return dg2;
                 else {
-                    dg2 = new DG2File(pis);
+                    dg2 = getBytesFromInputStream(pis, MAX_BLOCK_READ_SIZE);
                     Log.d(TAG, "Stored DG2");
-                    return dg2.getEncoded();
+                    return dg2;
                 }
             case PassportService.EF_DG11:
                 if (dg11 != null)
-                    return dg11.getEncoded();
+                    return dg11;
                 else {
-                    dg11 = new DG11File(pis);
+                    dg11 = getBytesFromInputStream(pis, MAX_BLOCK_READ_SIZE);
                     Log.d(TAG, "Stored DG11");
-                    return dg1.getEncoded();
+                    return dg1;
                 }
             case PassportService.EF_SOD:
                 if (sod != null)

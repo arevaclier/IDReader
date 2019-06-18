@@ -3,6 +3,7 @@ package net.noinspiration.idreader.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.otaliastudios.cameraview.CameraException;
@@ -35,10 +36,28 @@ public class PassportReaderActivity extends AppCompatActivity implements VisionI
     // Instances
     private boolean intentStarted = false;
 
+    //Intent extras
+    private String docType;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passport_reader);
+
+        ImageView mrzOverlay = findViewById(R.id.mrzOverlay);
+
+        // Change overlay depending on type of document
+        docType = getIntent().getStringExtra("doctype");
+        switch (docType) {
+            case AppProperties.DOCTYPE_IDCARD:
+                mrzOverlay.setImageDrawable(getDrawable(R.drawable.mrz_overlay_idcard));
+                break;
+            case AppProperties.DOCTYPE_PASSPORT:
+                mrzOverlay.setImageDrawable(getDrawable(R.drawable.mrz_overlay_passport));
+                break;
+            default:
+                mrzOverlay.setImageDrawable(getDrawable(R.drawable.mrz_overlay_passport));
+        }
 
         AppProperties.activityName = this.getClass().getSimpleName();
 
@@ -88,7 +107,7 @@ public class PassportReaderActivity extends AppCompatActivity implements VisionI
     public void onSuccessfulVision(String result) {
         Log.i(TAG, "onSuccessfulVision: Read BAC");
         BACKeyHelper bacKeyHelper = null;
-        try{
+        try {
             String info[] = result.split("/");
             BACKey bacKey = new BACKey(info[0], info[1], info[2]);
             bacKeyHelper = new BACKeyHelper(bacKey);
@@ -96,12 +115,13 @@ public class PassportReaderActivity extends AppCompatActivity implements VisionI
             Log.e(TAG, "onSuccessfulVision: Incorrect BAC Key");
         }
 
-        if(!intentStarted && bacKeyHelper != null && bacKeyHelper.getBacKey() != null) {
+        if (!intentStarted && bacKeyHelper != null && bacKeyHelper.getBacKey() != null) {
             intentStarted = true;
             stopCamera();
             Intent intent = new Intent(this, NFCActivity.class);
             intent.putExtra("backey", bacKeyHelper);
             intent.putExtra("activity", AppProperties.ACTIVITY_PASSPORT_SCAN);
+            intent.putExtra("doctype", docType);
             startActivity(intent);
             finish();
         }

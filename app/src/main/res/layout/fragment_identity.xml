@@ -367,7 +367,7 @@
                 android:cropToPadding="true"
                 android:foregroundGravity="right"
                 android:scaleType="fitCenter"
-                android:src="@drawable/mrz_overlay"
+                android:src="@drawable/mrz_overlay_passport"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/v_40_1"
                 app:layout_constraintTop_toTopOf="@+id/bsnDivider" />
